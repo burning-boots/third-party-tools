@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+
+<!--       Burning Boots        -->
+<!-- Please use a tab size of 2 -->
+
+<!DOCTYPE project>
+<project name="burning-boots-tools">
+	<description>
+A set of tools needed by Burning Boots builds.
+	</description>
+
+	<!-- Store this base dir -->
+	<dirname property="burning-boots-tools.basedir" file="${ant.file.burning-boots-tools}"/>
+
+	<!-- Pull in the various tools -->
+	<import file="${burning-boots-tools.basedir}/apache/ant/ant-contrib/tool.xml"/>
+</project>
