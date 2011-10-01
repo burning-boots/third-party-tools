@@ -15,11 +15,11 @@ Sets properties allowing use of the CSS compressor.
 	<!-- Set some properties to effectively use the tool -->
 	<last id="css-compressor-dir">
 		<sort>
-			<dirset dir="${burning-boots-tool-css-compressor.basedir}" includes="vendor/codenothing-css-compressor-*"/>
+			<dirset dir="${burning-boots-tool-css-compressor.basedir}" includes="vendor${file.separator}codenothing-css-compressor-*"/>
 		</sort>
 	</last>
 	<property name="bb.tools.css-compressor.dir" value="${toString:css-compressor-dir}"/>
-	<property name="bb.tools.css-compressor.cli" value="${bb.tools.css-compressor.dir}/cli/cli.php"/>
+	<property name="bb.tools.css-compressor.cli" value="${bb.tools.css-compressor.dir}${file.separator}cli${file.separator}cli.php"/>
 	<fail message="CSS Compressor directory '${bb.tools.css-compressor.dir}' isn't valid. '${bb.tools.css-compressor.cli}' isn't available">
 		<condition>
 			<not>

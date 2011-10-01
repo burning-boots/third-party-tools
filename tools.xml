@@ -13,13 +13,13 @@ A set of tools needed by Burning Boots builds.
 	<dirname property="burning-boots-tools.basedir" file="${ant.file.burning-boots-tools}"/>
 
 	<!-- Pull in the various tools -->
-	<import file="${burning-boots-tools.basedir}/apache/ant/ant-contrib/tool.xml"/>
-	<import file="${burning-boots-tools.basedir}/css-compressor/tool.xml"/>
-	<import file="${burning-boots-tools.basedir}/csslint/tool.xml"/>
-	<import file="${burning-boots-tools.basedir}/htmlcompressor/tool.xml"/>
-	<import file="${burning-boots-tools.basedir}/jsdoc/tool.xml"/>
-	<import file="${burning-boots-tools.basedir}/jshint/tool.xml"/>
-	<import file="${burning-boots-tools.basedir}/jslint/tool.xml"/>
-	<import file="${burning-boots-tools.basedir}/rhino/tool.xml"/>
-	<import file="${burning-boots-tools.basedir}/yui/compressor/tool.xml"/>
+	<import file="${burning-boots-tools.basedir}${file.separator}apache${file.separator}ant${file.separator}ant-contrib${file.separator}tool.xml"/>
+	<import file="${burning-boots-tools.basedir}${file.separator}css-compressor${file.separator}tool.xml"/>
+	<import file="${burning-boots-tools.basedir}${file.separator}csslint${file.separator}tool.xml"/>
+	<import file="${burning-boots-tools.basedir}${file.separator}htmlcompressor${file.separator}tool.xml"/>
+	<import file="${burning-boots-tools.basedir}${file.separator}jsdoc${file.separator}tool.xml"/>
+	<import file="${burning-boots-tools.basedir}${file.separator}jshint${file.separator}tool.xml"/>
+	<import file="${burning-boots-tools.basedir}${file.separator}jslint${file.separator}tool.xml"/>
+	<import file="${burning-boots-tools.basedir}${file.separator}rhino${file.separator}tool.xml"/>
+	<import file="${burning-boots-tools.basedir}${file.separator}yui${file.separator}compressor${file.separator}tool.xml"/>
 </project>

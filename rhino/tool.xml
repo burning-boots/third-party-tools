@@ -15,11 +15,11 @@ Sets properties allowing use of Rhino.
 	<!-- Set some properties to effectively use the tool -->
 	<last id="rhino-dir">
 		<sort>
-			<dirset dir="${burning-boots-tool-rhino.basedir}" includes="vendor/rhino*"/>
+			<dirset dir="${burning-boots-tool-rhino.basedir}" includes="vendor${file.separator}rhino*"/>
 		</sort>
 	</last>
 	<property name="bb.tools.rhino.dir" value="${toString:rhino-dir}"/>
-	<property name="bb.tools.rhino.jar" value="${bb.tools.rhino.dir}/js.jar"/>
+	<property name="bb.tools.rhino.jar" value="${bb.tools.rhino.dir}${file.separator}js.jar"/>
 	<fail message="Rhino directory '${bb.tools.rhino.dir}' isn't valid. '${bb.tools.rhino.jar}' isn't available">
 		<condition>
 			<not>

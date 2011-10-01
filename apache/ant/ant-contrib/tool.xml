@@ -15,12 +15,12 @@ Sets properties allowing use of the ant-contrib.
 	<!-- Set some properties to effectively use the tool -->
 	<last id="ant-contrib-dir">
 		<sort>
-			<dirset dir="${burning-boots-tool-apache-ant-ant-contrib.basedir}" includes="vendor/ant-contrib-*"/>
+			<dirset dir="${burning-boots-tool-apache-ant-ant-contrib.basedir}" includes="vendor${file.separator}ant-contrib-*"/>
 		</sort>
 	</last>
 	<property name="bb.tools.apache.ant.ant-contrib.dir" value="${toString:ant-contrib-dir}"/>
-	<fileset id="ant-contrib-jar" file="${bb.tools.apache.ant.ant-contrib.dir}/ant-contrib*.jar"/>
-	<property name="bb.tools.apache.ant.ant-contrib.jar" value="${bb.tools.apache.ant.ant-contrib.dir}/${toString:ant-contrib-jar}"/>
+	<fileset id="ant-contrib-jar" file="${bb.tools.apache.ant.ant-contrib.dir}${file.separator}ant-contrib*.jar"/>
+	<property name="bb.tools.apache.ant.ant-contrib.jar" value="${bb.tools.apache.ant.ant-contrib.dir}${file.separator}${toString:ant-contrib-jar}"/>
 	<fail message="Ant contrib directory '${bb.tools.apache.ant.ant-contrib.dir}' isn't valid. '${bb.tools.apache.ant.ant-contrib.jar}' isn't available">
 		<condition>
 			<not>

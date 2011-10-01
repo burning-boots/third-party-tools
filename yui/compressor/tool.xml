@@ -15,12 +15,12 @@ Sets properties allowing use of the YUI compressor.
 	<!-- Set some properties to effectively use the tool -->
 	<last id="yui-compressor-dir">
 		<sort>
-			<dirset dir="${burning-boots-tool-yui-compressor.basedir}" includes="vendor/yuicompressor-*"/>
+			<dirset dir="${burning-boots-tool-yui-compressor.basedir}" includes="vendor${file.separator}yuicompressor-*"/>
 		</sort>
 	</last>
 	<property name="bb.tools.yui.compressor.dir" value="${toString:yui-compressor-dir}"/>
-	<fileset id="yui-compressor-jar" file="${bb.tools.yui.compressor.dir}/build/*.jar"/>
-	<property name="bb.tools.yui.compressor.jar" value="${bb.tools.yui.compressor.dir}/build/${toString:yui-compressor-jar}"/>
+	<fileset id="yui-compressor-jar" file="${bb.tools.yui.compressor.dir}${file.separator}build/*.jar"/>
+	<property name="bb.tools.yui.compressor.jar" value="${bb.tools.yui.compressor.dir}${file.separator}build${file.separator}${toString:yui-compressor-jar}"/>
 	<fail message="YUI Compressor directory '${bb.tools.yui.compressor.dir}' isn't valid. '${bb.tools.yui.compressor.jar}' isn't available">
 		<condition>
 			<not>
