@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+
+<!--       Burning Boots        -->
+<!-- Please use a tab size of 2 -->
+
+<!DOCTYPE project>
+<project name="burning-boots-tool-csslint">
+	<description>
+Sets properties allowing use of CSS Lint.
+	</description>
+
+	<!-- Store this base dir -->
+	<dirname property="burning-boots-tool-csslint.basedir" file="${ant.file.burning-boots-tool-csslint}"/>
+
+	<!-- Set some properties to effectively use the tool -->
+	<last id="csslint-dir">
+		<sort>
+			<dirset dir="${burning-boots-tool-csslint.basedir}" includes="vendor/stubbornella-csslint-*"/>
+		</sort>
+	</last>
+	<property name="bb.tools.csslint.dir" value="${toString:csslint-dir}"/>
+	<property name="bb.tools.csslint.rhinojs" value="${bb.tools.csslint.dir}/release/csslint-rhino.js"/>
+	<fail message="CSS Lint directory '${bb.tools.csslint.dir}' isn't valid. '${bb.tools.csslint.rhinojs}' isn't available">
+		<condition>
+			<not>
+				<available file="${bb.tools.csslint.rhinojs}"/>
+			</not>
+		</condition>
+	</fail>
+</project>

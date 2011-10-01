@@ -1,0 +1,48 @@
+﻿<?xml version="1.0"?>
+
+<!--       Burning Boots        -->
+<!-- Please use a tab size of 2 -->
+
+<!DOCTYPE project>
+<project name="burning-boots-tool-jsdoc">
+	<description>
+Sets properties allowing use of JS doc.
+	</description>
+
+	<!-- Store this base dir -->
+	<dirname property="burning-boots-tool-jsdoc.basedir" file="${ant.file.burning-boots-tool-jsdoc}"/>
+
+	<!-- Set some properties to effectively use the tool -->
+	<last id="jsdoc-dir">
+		<sort>
+			<dirset dir="${burning-boots-tool-jsdoc.basedir}" includes="vendor/**/jsdoc-toolkit"/>
+		</sort>
+	</last>
+	<property name="bb.tools.jsdoc.dir" value="${toString:jsdoc-dir}"/>
+	<property name="bb.tools.jsdoc.jar" value="${bb.tools.jsdoc.dir}/jsrun.jar"/>
+	<fail message="JS doc directory '${bb.tools.jsdoc.dir}' isn't valid. '${bb.tools.jsdoc.jar}' isn't available">
+		<condition>
+			<not>
+				<available file="${bb.tools.jsdoc.jar}"/>
+			</not>
+		</condition>
+	</fail>
+	<property name="bb.tools.jsdoc.app.dir" value="${bb.tools.jsdoc.dir}/app"/>
+	<property name="bb.tools.jsdoc.app.runjs" value="${bb.tools.jsdoc.app.dir}/run.js"/>
+	<fail message="JS doc app directory '${bb.tools.jsdoc.app.dir}' isn't valid. '${bb.tools.jsdoc.app.runjs}' isn't available">
+		<condition>
+			<not>
+				<available file="${bb.tools.jsdoc.app.runjs}"/>
+			</not>
+		</condition>
+	</fail>
+	<property name="bb.tools.jsdoc.jar" value="${bb.tools.jsdoc.dir}/jsrun.jar"/>
+	<fail message="JS doc directory '${bb.tools.jsdoc.dir}' isn't valid. '${bb.tools.jsdoc.jar}' isn't available">
+		<condition>
+			<not>
+				<available file="${bb.tools.jsdoc.jar}"/>
+			</not>
+		</condition>
+	</fail>
+	<property name="bb.tools.jsdoc.template.dir" value="${bb.tools.jsdoc.dir}/templates/jsdoc"/>
+</project>

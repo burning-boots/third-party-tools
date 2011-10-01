@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+
+<!--       Burning Boots        -->
+<!-- Please use a tab size of 2 -->
+
+<!DOCTYPE project>
+<project name="burning-boots-tool-htmlcompressor">
+	<description>
+Sets properties allowing use of HTML compressor.
+	</description>
+
+	<!-- Store this base dir -->
+	<dirname property="burning-boots-tool-htmlcompressor.basedir" file="${ant.file.burning-boots-tool-htmlcompressor}"/>
+
+	<!-- Set some properties to effectively use the tool -->
+	<fileset id="htmlcompressor-jar" file="${burning-boots-tool-htmlcompressor.basedir}/vendor/htmlcompressor-*.jar"/>
+	<property name="bb.tools.htmlcompressor.jar" value="${burning-boots-tool-htmlcompressor.basedir}/${toString:htmlcompressor-jar}"/>
+</project>

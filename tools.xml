@@ -14,4 +14,12 @@ A set of tools needed by Burning Boots builds.
 
 	<!-- Pull in the various tools -->
 	<import file="${burning-boots-tools.basedir}/apache/ant/ant-contrib/tool.xml"/>
+	<import file="${burning-boots-tools.basedir}/css-compressor/tool.xml"/>
+	<import file="${burning-boots-tools.basedir}/csslint/tool.xml"/>
+	<import file="${burning-boots-tools.basedir}/htmlcompressor/tool.xml"/>
+	<import file="${burning-boots-tools.basedir}/jsdoc/tool.xml"/>
+	<import file="${burning-boots-tools.basedir}/jshint/tool.xml"/>
+	<import file="${burning-boots-tools.basedir}/jslint/tool.xml"/>
+	<import file="${burning-boots-tools.basedir}/rhino/tool.xml"/>
+	<import file="${burning-boots-tools.basedir}/yui/compressor/tool.xml"/>
 </project>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+
+<!--       Burning Boots        -->
+<!-- Please use a tab size of 2 -->
+
+<!DOCTYPE project>
+<project name="burning-boots-tool-rhino">
+	<description>
+Sets properties allowing use of Rhino.
+	</description>
+
+	<!-- Store this base dir -->
+	<dirname property="burning-boots-tool-rhino.basedir" file="${ant.file.burning-boots-tool-rhino}"/>
+
+	<!-- Set some properties to effectively use the tool -->
+	<last id="rhino-dir">
+		<sort>
+			<dirset dir="${burning-boots-tool-rhino.basedir}" includes="vendor/rhino*"/>
+		</sort>
+	</last>
+	<property name="bb.tools.rhino.dir" value="${toString:rhino-dir}"/>
+	<property name="bb.tools.rhino.jar" value="${bb.tools.rhino.dir}/js.jar"/>
+	<fail message="Rhino directory '${bb.tools.rhino.dir}' isn't valid. '${bb.tools.rhino.jar}' isn't available">
+		<condition>
+			<not>
+				<available file="${bb.tools.rhino.jar}"/>
+			</not>
+		</condition>
+	</fail>
+</project>

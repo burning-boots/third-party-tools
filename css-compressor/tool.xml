@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+
+<!--       Burning Boots        -->
+<!-- Please use a tab size of 2 -->
+
+<!DOCTYPE project>
+<project name="burning-boots-tool-css-compressor">
+	<description>
+Sets properties allowing use of the CSS compressor.
+	</description>
+
+	<!-- Store this base dir -->
+	<dirname property="burning-boots-tool-css-compressor.basedir" file="${ant.file.burning-boots-tool-css-compressor}"/>
+
+	<!-- Set some properties to effectively use the tool -->
+	<last id="css-compressor-dir">
+		<sort>
+			<dirset dir="${burning-boots-tool-css-compressor.basedir}" includes="vendor/codenothing-css-compressor-*"/>
+		</sort>
+	</last>
+	<property name="bb.tools.css-compressor.dir" value="${toString:css-compressor-dir}"/>
+	<property name="bb.tools.css-compressor.cli" value="${bb.tools.css-compressor.dir}/cli/cli.php"/>
+	<fail message="CSS Compressor directory '${bb.tools.css-compressor.dir}' isn't valid. '${bb.tools.css-compressor.cli}' isn't available">
+		<condition>
+			<not>
+				<available file="${bb.tools.css-compressor.cli}"/>
+			</not>
+		</condition>
+	</fail>
+</project>
