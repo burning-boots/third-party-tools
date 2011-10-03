@@ -15,11 +15,11 @@ Sets properties allowing use of JS Lint.
 	<!-- Set some properties to effectively use the tool -->
 	<last id="jslint-dir">
 		<sort>
-			<dirset dir="${burning-boots-tool-jslint.basedir}" includes="vendor${file.separator}douglascrockford-JSLint-*"/>
+			<dirset dir="${burning-boots-tool-jslint.basedir}" includes="vendor/douglascrockford-JSLint-*"/>
 		</sort>
 	</last>
 	<property name="bb.tools.jslint.dir" value="${toString:jslint-dir}"/>
-	<property name="bb.tools.jslint.js" value="${bb.tools.jslint.dir}${file.separator}jslint.js"/>
+	<property name="bb.tools.jslint.js" value="${bb.tools.jslint.dir}/jslint.js"/>
 	<fail message="JS Lint directory '${bb.tools.jslint.dir}' isn't valid. '${bb.tools.jslint.js}' isn't available">
 		<condition>
 			<not>

@@ -15,11 +15,11 @@ Sets properties allowing use of CSS Lint.
 	<!-- Set some properties to effectively use the tool -->
 	<last id="csslint-dir">
 		<sort>
-			<dirset dir="${burning-boots-tool-csslint.basedir}" includes="vendor${file.separator}stubbornella-csslint-*"/>
+			<dirset dir="${burning-boots-tool-csslint.basedir}" includes="vendor/stubbornella-csslint-*"/>
 		</sort>
 	</last>
 	<property name="bb.tools.csslint.dir" value="${toString:csslint-dir}"/>
-	<property name="bb.tools.csslint.rhinojs" value="${bb.tools.csslint.dir}${file.separator}release${file.separator}csslint-rhino.js"/>
+	<property name="bb.tools.csslint.rhinojs" value="${bb.tools.csslint.dir}/release/csslint-rhino.js"/>
 	<fail message="CSS Lint directory '${bb.tools.csslint.dir}' isn't valid. '${bb.tools.csslint.rhinojs}' isn't available">
 		<condition>
 			<not>

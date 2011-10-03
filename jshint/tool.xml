@@ -15,11 +15,11 @@ Sets properties allowing use of JS Hint.
 	<!-- Set some properties to effectively use the tool -->
 	<last id="jshint-dir">
 		<sort>
-			<dirset dir="${burning-boots-tool-jshint.basedir}" includes="vendor${file.separator}jshint-jshint-*"/>
+			<dirset dir="${burning-boots-tool-jshint.basedir}" includes="vendor/jshint-jshint-*"/>
 		</sort>
 	</last>
 	<property name="bb.tools.jshint.dir" value="${toString:jshint-dir}"/>
-	<property name="bb.tools.jshint.js" value="${bb.tools.jshint.dir}${file.separator}jshint.js"/>
+	<property name="bb.tools.jshint.js" value="${bb.tools.jshint.dir}/jshint.js"/>
 	<fail message="JS Hint directory '${bb.tools.jshint.dir}' isn't valid. '${bb.tools.jshint.js}' isn't available">
 		<condition>
 			<not>

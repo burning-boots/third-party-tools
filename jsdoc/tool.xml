@@ -19,7 +19,7 @@ Sets properties allowing use of JS doc.
 		</sort>
 	</last>
 	<property name="bb.tools.jsdoc.dir" value="${toString:jsdoc-dir}"/>
-	<property name="bb.tools.jsdoc.jar" value="${bb.tools.jsdoc.dir}${file.separator}jsrun.jar"/>
+	<property name="bb.tools.jsdoc.jar" value="${bb.tools.jsdoc.dir}/jsrun.jar"/>
 	<fail message="JS doc directory '${bb.tools.jsdoc.dir}' isn't valid. '${bb.tools.jsdoc.jar}' isn't available">
 		<condition>
 			<not>
@@ -27,8 +27,8 @@ Sets properties allowing use of JS doc.
 			</not>
 		</condition>
 	</fail>
-	<property name="bb.tools.jsdoc.app.dir" value="${bb.tools.jsdoc.dir}${file.separator}app"/>
-	<property name="bb.tools.jsdoc.app.runjs" value="${bb.tools.jsdoc.app.dir}${file.separator}run.js"/>
+	<property name="bb.tools.jsdoc.app.dir" value="${bb.tools.jsdoc.dir}/app"/>
+	<property name="bb.tools.jsdoc.app.runjs" value="${bb.tools.jsdoc.app.dir}/run.js"/>
 	<fail message="JS doc app directory '${bb.tools.jsdoc.app.dir}' isn't valid. '${bb.tools.jsdoc.app.runjs}' isn't available">
 		<condition>
 			<not>
@@ -36,7 +36,7 @@ Sets properties allowing use of JS doc.
 			</not>
 		</condition>
 	</fail>
-	<property name="bb.tools.jsdoc.jar" value="${bb.tools.jsdoc.dir}${file.separator}jsrun.jar"/>
+	<property name="bb.tools.jsdoc.jar" value="${bb.tools.jsdoc.dir}/jsrun.jar"/>
 	<fail message="JS doc directory '${bb.tools.jsdoc.dir}' isn't valid. '${bb.tools.jsdoc.jar}' isn't available">
 		<condition>
 			<not>
@@ -44,5 +44,18 @@ Sets properties allowing use of JS doc.
 			</not>
 		</condition>
 	</fail>
-	<property name="bb.tools.jsdoc.template.dir" value="${bb.tools.jsdoc.dir}${file.separator}templates${file.separator}jsdoc"/>
+	<property name="bb.tools.jsdoc.template.dir" value="${bb.tools.jsdoc.dir}/templates/jsdoc"/>
+	<last id="jsdoc-ant-task">
+		<sort>
+			<fileset file="${burning-boots-tool-jsdoc.basedir}/vendor/jsdoc-toolkit-ant-task-*.jar"/>
+		</sort>
+	</last>
+	<property name="bb.tools.jsdoc.ant.jar" value="${toString:jsdoc-ant-task}"/>
+	<fail message="Couldn't find the JS documentation Ant task jar file at '${burning-boots-tool-jsdoc.basedir}/vendor/jsdoc-toolkit-ant-task-*.jar'.">
+		<condition>
+			<not>
+				<available file="${bb.tools.jsdoc.ant.jar}"/>
+			</not>
+		</condition>
+	</fail>
 </project>
