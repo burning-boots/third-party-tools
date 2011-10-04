@@ -23,9 +23,12 @@ Sets properties allowing use of the YUI compressor.
 	<property name="bb.tools.yui.compressor.jar" value="${bb.tools.yui.compressor.dir}/build/${toString:yui-compressor-jar}"/>
 	<fail message="YUI Compressor directory '${bb.tools.yui.compressor.dir}' isn't valid. '${bb.tools.yui.compressor.jar}' isn't available">
 		<condition>
-			<not>
-				<available file="${bb.tools.yui.compressor.jar}"/>
-			</not>
+			<or>
+				<not>
+					<available file="${bb.tools.yui.compressor.jar}"/>
+				</not>
+				<equals arg1="${bb.tools.yui.compressor.jar}" arg2=""/>
+			</or>
 		</condition>
 	</fail>
 </project>

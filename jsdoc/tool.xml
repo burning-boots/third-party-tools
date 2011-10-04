@@ -22,26 +22,35 @@ Sets properties allowing use of JS doc.
 	<property name="bb.tools.jsdoc.jar" value="${bb.tools.jsdoc.dir}/jsrun.jar"/>
 	<fail message="JS doc directory '${bb.tools.jsdoc.dir}' isn't valid. '${bb.tools.jsdoc.jar}' isn't available">
 		<condition>
-			<not>
-				<available file="${bb.tools.jsdoc.jar}"/>
-			</not>
+			<or>
+				<not>
+					<available file="${bb.tools.jsdoc.jar}"/>
+				</not>
+				<equals arg1="${bb.tools.jsdoc.jar}" arg2=""/>
+			</or>
 		</condition>
 	</fail>
 	<property name="bb.tools.jsdoc.app.dir" value="${bb.tools.jsdoc.dir}/app"/>
 	<property name="bb.tools.jsdoc.app.runjs" value="${bb.tools.jsdoc.app.dir}/run.js"/>
 	<fail message="JS doc app directory '${bb.tools.jsdoc.app.dir}' isn't valid. '${bb.tools.jsdoc.app.runjs}' isn't available">
 		<condition>
-			<not>
-				<available file="${bb.tools.jsdoc.app.runjs}"/>
-			</not>
+			<or>
+				<not>
+					<available file="${bb.tools.jsdoc.app.runjs}"/>
+				</not>
+				<equals arg1="${bb.tools.jsdoc.app.runjs}" arg2=""/>
+			</or>
 		</condition>
 	</fail>
 	<property name="bb.tools.jsdoc.jar" value="${bb.tools.jsdoc.dir}/jsrun.jar"/>
 	<fail message="JS doc directory '${bb.tools.jsdoc.dir}' isn't valid. '${bb.tools.jsdoc.jar}' isn't available">
 		<condition>
-			<not>
-				<available file="${bb.tools.jsdoc.jar}"/>
-			</not>
+			<or>
+				<not>
+					<available file="${bb.tools.jsdoc.jar}"/>
+				</not>
+				<equals arg1="${bb.tools.jsdoc.jar}" arg2=""/>
+			</or>
 		</condition>
 	</fail>
 	<property name="bb.tools.jsdoc.template.dir" value="${bb.tools.jsdoc.dir}/templates/jsdoc"/>
@@ -53,9 +62,14 @@ Sets properties allowing use of JS doc.
 	<property name="bb.tools.jsdoc.ant.jar" value="${toString:jsdoc-ant-task}"/>
 	<fail message="Couldn't find the JS documentation Ant task jar file at '${burning-boots-tool-jsdoc.basedir}/vendor/jsdoc-toolkit-ant-task-*.jar'.">
 		<condition>
-			<not>
-				<available file="${bb.tools.jsdoc.ant.jar}"/>
-			</not>
+			<or>
+				<or>
+					<not>
+						<available file="${bb.tools.jsdoc.ant.jar}"/>
+					</not>
+					<equals arg1="${bb.tools.jsdoc.ant.jar}" arg2=""/>
+				</or>
+			</or>
 		</condition>
 	</fail>
 </project>

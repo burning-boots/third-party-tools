@@ -22,9 +22,12 @@ Sets properties allowing use of JS Hint.
 	<property name="bb.tools.jshint.js" value="${bb.tools.jshint.dir}/jshint.js"/>
 	<fail message="JS Hint directory '${bb.tools.jshint.dir}' isn't valid. '${bb.tools.jshint.js}' isn't available">
 		<condition>
-			<not>
-				<available file="${bb.tools.jshint.js}"/>
-			</not>
+			<or>
+				<not>
+					<available file="${bb.tools.jshint.js}"/>
+				</not>
+				<equals arg1="${bb.tools.jshint.js}" arg2=""/>
+			</or>
 		</condition>
 	</fail>
 </project>

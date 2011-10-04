@@ -22,9 +22,12 @@ Sets properties allowing use of Rhino.
 	<property name="bb.tools.rhino.jar" value="${bb.tools.rhino.dir}/js.jar"/>
 	<fail message="Rhino directory '${bb.tools.rhino.dir}' isn't valid. '${bb.tools.rhino.jar}' isn't available">
 		<condition>
-			<not>
-				<available file="${bb.tools.rhino.jar}"/>
-			</not>
+			<or>
+				<not>
+					<available file="${bb.tools.rhino.jar}"/>
+				</not>
+				<equals arg1="${bb.tools.rhino.jar}" arg2=""/>
+			</or>
 		</condition>
 	</fail>
 </project>

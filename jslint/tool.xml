@@ -22,9 +22,12 @@ Sets properties allowing use of JS Lint.
 	<property name="bb.tools.jslint.js" value="${bb.tools.jslint.dir}/jslint.js"/>
 	<fail message="JS Lint directory '${bb.tools.jslint.dir}' isn't valid. '${bb.tools.jslint.js}' isn't available">
 		<condition>
-			<not>
-				<available file="${bb.tools.jslint.js}"/>
-			</not>
+			<or>
+				<not>
+					<available file="${bb.tools.jslint.js}"/>
+				</not>
+				<equals arg1="${bb.tools.jslint.js}" arg2=""/>
+			</or>
 		</condition>
 	</fail>
 </project>

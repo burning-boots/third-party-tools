@@ -23,9 +23,12 @@ Sets properties allowing use of the ant-contrib.
 	<property name="bb.tools.apache.ant.ant-contrib.jar" value="${bb.tools.apache.ant.ant-contrib.dir}/${toString:ant-contrib-jar}"/>
 	<fail message="Ant contrib directory '${bb.tools.apache.ant.ant-contrib.dir}' isn't valid. '${bb.tools.apache.ant.ant-contrib.jar}' isn't available">
 		<condition>
-			<not>
-				<available file="${bb.tools.apache.ant.ant-contrib.jar}"/>
-			</not>
+			<or>
+				<not>
+					<available file="${bb.tools.apache.ant.ant-contrib.jar}"/>
+				</not>
+				<equals arg1="${bb.tools.apache.ant.ant-contrib.jar}" arg2=""/>
+			</or>
 		</condition>
 	</fail>
 </project>

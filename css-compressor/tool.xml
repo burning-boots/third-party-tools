@@ -22,9 +22,12 @@ Sets properties allowing use of the CSS compressor.
 	<property name="bb.tools.css-compressor.cli" value="${bb.tools.css-compressor.dir}/cli/cli.php"/>
 	<fail message="CSS Compressor directory '${bb.tools.css-compressor.dir}' isn't valid. '${bb.tools.css-compressor.cli}' isn't available">
 		<condition>
-			<not>
-				<available file="${bb.tools.css-compressor.cli}"/>
-			</not>
+			<or>
+				<not>
+					<available file="${bb.tools.css-compressor.cli}"/>
+				</not>
+				<equals arg1="${bb.tools.css-compressor.cli}" arg2=""/>
+			</or>
 		</condition>
 	</fail>
 </project>

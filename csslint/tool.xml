@@ -22,9 +22,12 @@ Sets properties allowing use of CSS Lint.
 	<property name="bb.tools.csslint.rhinojs" value="${bb.tools.csslint.dir}/release/csslint-rhino.js"/>
 	<fail message="CSS Lint directory '${bb.tools.csslint.dir}' isn't valid. '${bb.tools.csslint.rhinojs}' isn't available">
 		<condition>
-			<not>
-				<available file="${bb.tools.csslint.rhinojs}"/>
-			</not>
+			<or>
+				<not>
+					<available file="${bb.tools.csslint.rhinojs}"/>
+				</not>
+				<equals arg1="${bb.tools.csslint.rhinojs}" arg2=""/>
+			</or>
 		</condition>
 	</fail>
 </project>
