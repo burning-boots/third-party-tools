@@ -13,6 +13,22 @@ Sets properties allowing use of HTML compressor.
 	<dirname property="burning-boots-tool-htmlcompressor.basedir" file="${ant.file.burning-boots-tool-htmlcompressor}"/>
 
 	<!-- Set some properties to effectively use the tool -->
-	<fileset id="htmlcompressor-jar" file="${burning-boots-tool-htmlcompressor.basedir}/vendor/htmlcompressor-*.jar"/>
-	<property name="bb.tools.htmlcompressor.jar" value="${burning-boots-tool-htmlcompressor.basedir}/${toString:htmlcompressor-jar}"/>
+	<last id="html-compressor-jar">
+		<sort>
+			<fileset file="${burning-boots-tool-htmlcompressor.basedir}/vendor/htmlcompressor-*.jar"/>
+		</sort>
+	</last>
+	<property name="bb.tools.htmlcompressor.jar" value="${toString:html-compressor-jar}"/>
+	<fail message="Couldn't find the HTML compressor jar file at '${burning-boots-tool-htmlcompressor.basedir}/vendor/htmlcompressor-*.jar'.">
+		<condition>
+			<or>
+				<or>
+					<not>
+						<available file="${bb.tools.htmlcompressor.jar}"/>
+					</not>
+					<equals arg1="${bb.tools.htmlcompressor.jar}" arg2=""/>
+				</or>
+			</or>
+		</condition>
+	</fail>
 </project>
